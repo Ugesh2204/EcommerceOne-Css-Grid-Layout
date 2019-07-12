@@ -168,7 +168,7 @@ img {
 
 .summertrip {
     grid-area: summertrip;
-    background: url(../../img/blog/feature-img1.jpg);
+    background: url(img/blog/feature-img1.jpg);
     background-position: center;
     display: flex;
     align-items: center;
