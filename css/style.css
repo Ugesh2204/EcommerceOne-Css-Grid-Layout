@@ -3,6 +3,8 @@
     padding:0;
     box-sizing: border-box;
 }
+
+p { color: #333;}
 .redbandeau {
     width:100%;
     background-color:#ef002e;
@@ -20,8 +22,9 @@ img {
 /*RedBandeau*/
 .header-firstsection {
     display:grid;
+    grid-template-columns: 680px 1fr 1fr;
     grid-template-areas:
-    'header-logo user-register';
+    'header-logo user-register mysearch';
 }
 
 .header-logo{
@@ -31,7 +34,11 @@ img {
     justify-content: center;
 }
 
-.header-logo h1,p {
+.header-logo h1 {
+    color:#fff;
+}
+
+.header-logo p {
     color:#fff;
 }
 
@@ -60,6 +67,13 @@ img {
     text-decoration: none;
     color:#fff;
 
+}
+
+.mysearch {
+    grid-area: mysearch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .myform {
@@ -318,6 +332,127 @@ img {
 /*side-container*/
 
 
+/*Popular news*/
+
+.popular-news-area {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 680px 1fr;
+    grid-template-areas:
+    'popular-new-col-1 popular-new-col-2 ';
+    margin-top: 50px; 
+}
+
+.popular-new-col-1{
+    grid-area: popular-new-col-1
+}
+
+/*popular-new-col-1*/
+.section-heading {
+    text-align: center;
+    padding:0.8rem 0;
+    position: relative;
+    margin-bottom: 4rem;
+   
+}
+
+.section-heading::after {
+    content: "";
+    width: 100%;
+    left:0;
+    top:59px;
+    position: absolute;
+    border-bottom:1px solid #d0d5d8;
+    z-index: -1;
+}
+
+
+.section-heading h6 {
+   color: #fff;
+   font-size: 1.2rem;
+   width:160px;
+   padding:0.8rem 0;
+   background-color: #ee002d;
+}
+
+
+
+/**/
+.popular-new-wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    'popular-article-col-1 popular-article-col-2';
+}
+
+.popular-article-col-1 {
+    grid-area: popular-article-col-1;
+}
+
+.popular-box-articles{
+    margin-bottom: 1rem;
+}
+
+.popular-article-col-1 h3 {
+    color: #ef002e;
+    text-transform:  uppercase;
+    font-size: 16px;
+    margin: 0.5rem 0 0.5rem;
+}
+
+
+.popular-article-col-2 {
+    grid-area: popular-article-col-2;
+}
+
+.popular-article-col-2 h3 {
+    color: #ef002e;
+    text-transform:  uppercase;
+    font-size: 16px;
+    margin: 0.5rem 0 0.5rem;
+}
+
+
+
+/*Side bar */
+.popular-new-col-2{
+    grid-area: popular-new-col-2
+}
+.Most-popular-News {
+    background-color: #eff4f9;
+    padding:3rem 1rem;
+}
+
+
+.Most-popular-News h3 {
+    color:#ef002e;
+    font-size: 30px;
+    text-align: left;
+}
+.single-popular-post {
+    margin: 1rem 0;
+}
+
+.single-popular-post a {
+    text-decoration: none;
+    text-align: left;
+    color:#152335;
+    font-size: 20px;
+}
+
+.single-popular-post h5 span {
+    margin-right: 15px;
+    color: #ee002d;}
+
+.single-popular-post p {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/**/
+
+
 /*Responsive*/
 
 @media(max-width:360px){
@@ -328,9 +463,11 @@ img {
     }
     
     .header-firstsection {
+        grid-template-columns: 1fr;
         grid-template-areas:
         'header-logo'
-        'user-register';
+        'user-register'
+        'mysearch';
     }
 
     .header-wrapper {
@@ -385,6 +522,22 @@ img {
         'finance-col-1' 
         'finance-col-2';
     }
+
+    .popular-news-area {
+        grid-template-columns:1fr;
+        grid-template-areas:
+        'popular-new-col-1'
+        'popular-new-col-2';
+       
+    }
+    
+
+    .popular-new-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'popular-article-col-1' 
+        'popular-article-col-2';
+    }
 }
 
 @media(max-width:700px){
@@ -395,9 +548,11 @@ img {
     }
     
     .header-firstsection {
+        grid-template-columns: 1fr;
         grid-template-areas:
         'header-logo'
-        'user-register';
+        'user-register'
+        'mysearch';
     }
 
     .header-wrapper {
@@ -416,6 +571,13 @@ img {
     .login-register ul {
         margin-bottom: 10px;
         margin-right: 0px;
+    }
+
+    .mysearch {
+        grid-area: mysearch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /*nav*/
@@ -450,6 +612,22 @@ img {
         grid-template-areas:
         'finance-col-1' 
         'finance-col-2';
+    }
+
+    .popular-news-area {
+        grid-template-columns:1fr;
+        grid-template-areas:
+        'popular-new-col-1'
+        'popular-new-col-2';
+       
+    }
+    
+
+    .popular-new-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'popular-article-col-1' 
+        'popular-article-col-2';
     }
 }
 
