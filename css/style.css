@@ -8,6 +8,7 @@ p { color: #333;}
 .redbandeau {
     width:100%;
     background-color:#ef002e;
+    min-height: 100px;
 }
 
 .container {
@@ -22,9 +23,10 @@ img {
 /*RedBandeau*/
 .header-firstsection {
     display:grid;
-    grid-template-columns: 680px 1fr 1fr;
+    padding: 1.2rem 0 1rem 0rem;
+    grid-template-columns: 667px  1fr 1fr 1fr;
     grid-template-areas:
-    'header-logo user-register mysearch';
+    'header-logo login-logout user-register mysearch';
 }
 
 .header-logo{
@@ -43,31 +45,42 @@ img {
 }
 
 
-.user-register{
+.login-logout{
+    grid-area: login-logout;
+    display:flex;
+    align-items: center;
+    margin-right: 1rem;
+    
+}
+
+.login-logout ul {
+   list-style-type: none;
+}
+
+.login-logout a {
+    text-decoration: none;
+    Color:#fff;
+}
+
+
+.user-register {
     grid-area: user-register;
-    display: flex;
-   text-align: center;
-   min-height: 100px;
-   justify-content: flex-end;
-   align-items: center;
+    display:flex;
+    align-items: center;
+    margin-right: 1rem
    
 }
 
+.user-register ul {
+    list-style-type: none;
+ }
+ 
+ .user-register a {
+     text-decoration: none;
+     Color:#fff;
+ }
 
-.login-register ul {
-    display: grid;
-    list-style: none;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    margin-right:20px;
-}
 
-.login-register a {
-    display:block;
-    text-decoration: none;
-    color:#fff;
-
-}
 
 .mysearch {
     grid-area: mysearch;
@@ -706,6 +719,7 @@ footer {
         grid-template-columns: 1fr;
         grid-template-areas:
         'header-logo'
+        'login-logout'
         'user-register'
         'mysearch';
     }
@@ -716,11 +730,17 @@ footer {
 
     .header-logo{
         align-items: center;
+        margin-bottom: 20px;
     }
 
-    .user-register{
-       flex-direction: column;
+    .login-logout{
+        flex-direction: column;
+      
+    }
+    .user-register {
+        flex-direction: column;
        margin-bottom: 20px;
+      
     }
 
     .login-register ul {
@@ -803,6 +823,7 @@ footer {
         grid-template-columns: 1fr;
         grid-template-areas:
         'header-logo'
+        'login-logout' 
         'user-register'
         'mysearch';
     }
@@ -815,15 +836,17 @@ footer {
         align-items: center;
     }
 
-    .user-register{
+    .login-logout{
        flex-direction: column;
-       margin-bottom: 20px;
+       margin: 20px 0px 20px;
     }
 
-    .login-register ul {
-        margin-bottom: 10px;
-        margin-right: 0px;
+    .user-register {
+        flex-direction: column;
+       margin: 0px 0px 20px 0px;
     }
+
+   
 
     .mysearch {
         grid-area: mysearch;
